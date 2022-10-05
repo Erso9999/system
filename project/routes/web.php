@@ -23,7 +23,7 @@ Route::get('/welcome', function () {
 });
 
 Route::get('/ivan', function () {
-    return view('ivan', ['erso' => '<h1>helloe</h1>']);
+    return view('ivan', ['erso' => '<h1>helloe</h1>']);;;;;;
 });
 
 Route::get('open', [userController::class, 'open']);
