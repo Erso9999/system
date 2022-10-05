@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
-
+use App\Models\UserAccount;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,16 +14,20 @@ use App\Http\Controllers\userController;
 |
 */
 
-Route::get('/', function () {
-    return view('erso');
-});
+/*Route::get('/user/{id?}', function ($id = 13) {
+    return 'User '.$id;
+})->name('erso');*/
 
 Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/ivan', function () {
-    return view('ivan', ['erso' => '<h1>helloe</h1>']);;;;;;
+Route::get('/user', function () {
+    $users = [
+        ['name' => 'Ersin Mehmed', 'age' => 23, 'city' => 'Varna'],
+        ['name' => 'Ina Sirakova', 'age' => 22, 'city' => 'Varna']
+    ];
+    return view('user', ['pizzas' => $users]);
 });
 
 Route::get('open', [userController::class, 'open']);

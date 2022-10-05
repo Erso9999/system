@@ -7,8 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <?= $erso ?>
-    <a href="/">back to main page</a>
+ <div>Name: {{$name}}</div>
+ <div>Age: {{$age}}</div>
+ <div>City: {{$city}}</div>
+ @if($age > 18)
+    <div>Person is of legal age </div>
+ @else
+    <div>Person is not of legal age </div>
+ @endif
 </body>
 </html>
