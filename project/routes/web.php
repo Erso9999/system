@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
-use App\Models\UserAccount;
+use App\Http\Controllers\ErsinController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,21 +18,28 @@ use App\Models\UserAccount;
     return 'User '.$id;
 })->name('erso');*/
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
 
-Route::get('/user', function () {
-    $users = [
+Route::get('/user', [ErsinController::class, 'index']);
+Route::get('/user/create', [ErsinController::class, 'create']);  
+Route::get('/user/{id}', [ErsinController::class, 'show']);
+
+    /*$users = [
         ['name' => 'Ersin Mehmed', 'age' => 23, 'city' => 'Varna'],
-        ['name' => 'Ina Sirakova', 'age' => 22, 'city' => 'Varna']
-    ];
-    return view('user', ['pizzas' => $users]);
-});
+        ['name' => 'Ina Sirakova', 'age' => 22, 'city' => 'Varna'],
+        ['name' => 'Geri Nikol', 'age' => 24, 'city' => 'Sofia']
+    ];*/
 
-Route::get('open', [userController::class, 'open']);
-Route::post('user/create',  [userController::class, 'create']);
-Route::post('user/update',  [userController::class, 'update']);
-Route::get('delete/{id}',  [userController::class, 'delete']);
+    //return view('user', ['id' => $id]);
+    /*return view('user',
+    [
+        'users' => $users,
+        'name' => request('name')
+    ]);*/
+
+
+// Route::get('open', [userController::class, 'open']);
+// Route::post('user/create',  [userController::class, 'create']);
+// Route::post('user/update',  [userController::class, 'update']);
+// Route::get('delete/{id}',  [userController::class, 'delete']);
 
 ?>

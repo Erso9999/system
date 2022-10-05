@@ -4,21 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\UserAccount;
 
 class userController extends Controller
 {
     
     public function open()
     {
-        $users = User::all();
-
-        return view('erso', [
-            'users' => $users,
-        ]);
+        return view('erso');
     }
 
-    public function create(Request $request)
+   /* public function create(Request $request)
     {   
         $name = $request->input('name');
         $age = $request->input('age');
@@ -59,5 +54,5 @@ class userController extends Controller
         } else {
             return back()->with('fail', 'Something went wrong');
         }
-    }
+    }*/
 }
