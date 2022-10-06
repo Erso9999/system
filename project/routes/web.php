@@ -20,8 +20,11 @@ use App\Http\Controllers\ErsinController;
 
 
 Route::get('/user', [ErsinController::class, 'index']);
-Route::get('/user/create', [ErsinController::class, 'create']);  
-Route::get('/user/{id}', [ErsinController::class, 'show']);
+Route::get('/user/create', [ErsinController::class, 'create']);
+Route::post('/user', [ErsinController::class, 'store']);
+//Route::delete('/user/{id}', [ErsinController::class, 'destroy']);  
+//Route::get('/user/{id}', [ErsinController::class, 'show']);
+
 
     /*$users = [
         ['name' => 'Ersin Mehmed', 'age' => 23, 'city' => 'Varna'],

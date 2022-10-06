@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('age');
             $table->string('city');
             $table->timestamps();
+            $table->json('type');
         });
     }
 
