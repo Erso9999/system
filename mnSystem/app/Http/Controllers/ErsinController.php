@@ -13,7 +13,7 @@ class ErsinController extends Controller
         $users = Ersin::all();
         //$users = Ersin::orderBy('age')->get();
         //$users = Ersin::orderBy('age', 'desc')->get();
-        $users = Ersin::where('city', 'Varna')->get();
+        //$users = Ersin::where('city', 'Varna')->get();
         //$users = Ersin::latest()->get();
 
         return view('user', [
